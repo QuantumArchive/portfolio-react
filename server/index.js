@@ -1,10 +1,7 @@
 const Koa = require('koa')
 const app = new Koa()
+const routes = require('./routes/routes')
 
-console.log('app', app)
-
-app.use(async ctx => {
-  ctx.body = 'hello world'
-})
+routes(app)
 
 app.listen(9000)
