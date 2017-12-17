@@ -11,6 +11,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "config": "^1.28.1",
+    "firebase-admin": "^5.5.1",
     "koa": "^2.3.0",
     "koa-joi-router": "^5.0.0"
   },
