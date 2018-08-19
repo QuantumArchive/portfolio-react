@@ -1,0 +1,5 @@
+{
+  "automock": false,
+  "roots": ["./tests/integration"],
+  "testRegex": "([\\W\\w\\S\\s]*)\\.integration\\.test\\.js$"
+}
