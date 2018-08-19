@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests/unit/*.js",
-    "integration": "mocha ./tests/integration/*.js",
+    "test": "jest ./tests/unit/*.js",
+    "integration": "NODE_ENV=test yarn jest --config ./jest.integration.json --runInBand --forceExit",
     "lint": "eslint .",
-    "start": "node index.js"
+    "start": "node index.js",
+    "snap": "jest -u"
   },
   "author": "",
   "license": "MIT",
@@ -30,6 +31,8 @@
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
+    "expect": "^23.5.0",
+    "jest": "^23.5.0",
     "mocha": "^3.5.3",
     "standard": "^10.0.3",
     "supertest": "^3.0.0"

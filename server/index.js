@@ -1,6 +1,5 @@
 const Koa = require('koa')
 const app = new Koa()
-const routes = require('./routes/routes')
 const config = require('config')
 const mount = require('koa-mount')
 const graphqlHTTP = require('koa-graphql')
@@ -15,8 +14,6 @@ app.use(mount('/graphql', graphqlHTTP({
   }),
   graphiql: true
 })))
-
-routes(app)
 
 const server = app.listen(config.get('port'))
 
