@@ -1,0 +1,16 @@
+{
+  "automock": false,
+  "collectCoverage": true,
+  "coverageDirectory": "./reports/integration",
+  "coverageThreshold": {
+    "global": {
+      "branches": 80,
+      "functions": 80,
+      "lines": 80,
+      "statements": 80
+    }
+  },
+  "roots": [
+    "<rootDir>/tests/integration"
+  ]
+}

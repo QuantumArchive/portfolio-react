@@ -1,14 +1,15 @@
 const expect = require('expect')
 const supertest = require('supertest')
-const { server } = require('../../index')
+const { server, app } = require('../../server/index')
 
 describe('/server/resolvers/helloWorld', () => {
   const request = supertest(server)
   const graphQlEndpoint = '/graphql'
-  const timeout = 15000
+  const timeout = 5000
 
-  afterAll((done) => {
-    server.close(done)
+  afterAll(done => {
+    app.on('close', done)
+    server.close()
   }, timeout)
 
   test('returns a body with hello world on it', async () => {

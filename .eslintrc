@@ -12,5 +12,16 @@
     "it": true,
     "before": true,
     "after": true
+  },
+  "globals": {
+    "describe": true,
+    "it": true,
+    "beforeEach": true,
+    "beforeAll": true,
+    "afterAll": true,
+    "afterEach": true,
+    "before": true,
+    "after": true,
+    "test": true
   }
 }
