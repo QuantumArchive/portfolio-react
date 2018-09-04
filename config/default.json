@@ -1,7 +1,7 @@
 {
   "firebase": {
     "databaseURL": "https://<DATABASE_NAME>.firebaseio.com",
-    "credential": {
+    "credentials": {
       "projectId": "<PROJECT_ID>",
       "clientEmail": "kungfuremix@<PROJECT_ID>.iam.geserviceaccount.com"
     }
