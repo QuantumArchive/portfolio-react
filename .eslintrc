@@ -1,18 +1,8 @@
 {
-  "extends": "standard",
   "env": {
-    "es6": true
+    "browser": true
   },
-  "rules": {
-    "no-fallthrough": 0
-  },
-  "plugins": [ "json" ],
-  "globals": {
-    "describe": true,
-    "it": true,
-    "before": true,
-    "after": true
-  },
+  "extends": ["standard", "standard-react"],
   "globals": {
     "describe": true,
     "it": true,
@@ -22,6 +12,18 @@
     "afterEach": true,
     "before": true,
     "after": true,
-    "test": true
+    "test": true,
+    "global": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "plugins": [ "standard" ],
+  "rules": {
+    "strict": 0,
+    "no-console": ["error"]
   }
 }

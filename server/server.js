@@ -4,8 +4,8 @@ const config = require('config')
 const mount = require('koa-mount')
 const graphqlHTTP = require('koa-graphql')
 const { makeExecutableSchema } = require('graphql-tools')
-const typeDefs = require('./schemas/index')
-const resolvers = require('./resolvers/index')
+const typeDefs = require('./schemas')
+const resolvers = require('./resolvers')
 
 app.use(mount('/graphql', graphqlHTTP({
   schema: makeExecutableSchema({
