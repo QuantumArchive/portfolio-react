@@ -1,6 +1,16 @@
 {
   "collectCoverage": true,
+  "collectCoverageFrom": [
+    "src/**/*.js",
+    "server/**/*.js"
+  ],
   "coverageDirectory": "./reports/unit",
+  "coverageReporters": [
+    "json-summary",
+    "lcov",
+    "html",
+    "text"
+  ],
   "coverageThreshold": {
     "global": {
       "branches": 80,
@@ -10,6 +20,11 @@
     }
   },
   "roots": [
-    "<rootDir>/tests/unit"
-  ]
+    "<rootDir>/tests/unit",
+    "<rootDir>/src"
+  ],
+  "setupTestFrameworkScriptFile": "<rootDir>/tests/helper.js",
+  "transform": {
+    "^.+\\.js?$": "babel-jest"
+  }
 }
