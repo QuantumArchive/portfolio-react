@@ -8,7 +8,7 @@ import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory'
 import 'react-virtualized/styles.css'
 import createBrowserHistory from 'history/createBrowserHistory'
-import { ConntectedRouter } from 'react-router-redux'
+import { ConnectedRouter } from 'connected-react-router'
 import configureStore from './state/store'
 import App from './components/App/App'
 import { APP_NAME, GRAPHQL_FETCH_POLICY } from './constants'
@@ -23,11 +23,11 @@ const store = configureStore(
 )
 
 const requestLink = new HttpLink({
-  uri: '/graphql',
+  uri: 'chris-react-portfolio/graphql',
   credentials: 'same-origin'
 })
 
-const errorLink = onError(errors => Object.create())
+const errorLink = onError(errors => {})
 
 const client = new ApolloClient({
   link: errorLink.concat(requestLink),
@@ -47,9 +47,9 @@ const client = new ApolloClient({
 render(
   <ApolloProvider client={client}>
     <Provider store={store}>
-      <ConntectedRouter history={history}>
+      <ConnectedRouter history={history}>
         <App />
-      </ConntectedRouter>
+      </ConnectedRouter>
     </Provider>
   </ApolloProvider>,
   document.getElementById('root')

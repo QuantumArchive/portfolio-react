@@ -1,11 +1,11 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import reducers from './modules'
-import { routerMiddleware } from 'react-router-redux'
+import { connectRouter, routerMiddleware } from 'connected-react-router'
 
 export default (initialState, history) =>
   createStore(
-    reducers,
+    connectRouter(history)(reducers),
     initialState,
     compose(
       applyMiddleware(

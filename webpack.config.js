@@ -5,9 +5,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development'
 
 const webpackConfigOptions = {
-  node: {
-    fs: 'empty'
-  },
   devtool: IS_DEVELOPMENT
     ? 'cheap-module-eval-source-map'
     : 'source-map',
@@ -18,12 +15,11 @@ const webpackConfigOptions = {
     'regenerator-runtime/runtime',
     './src/index'
   ],
-  output: {
-    path: path.join(__dirname, 'dist/'),
-    filename: 'bundle.js'
-  },
+  mode: IS_DEVELOPMENT
+    ? 'development'
+    : 'production',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         loaders: ['babel-loader'],
@@ -35,6 +31,13 @@ const webpackConfigOptions = {
         use: ['style-loader', 'css-loader']
       }
     ]
+  },
+  node: {
+    fs: 'empty'
+  },
+  output: {
+    path: path.join(__dirname, 'dist/'),
+    filename: 'bundle.js'
   },
   plugins: [
     new webpack.DefinePlugin({

@@ -7,6 +7,9 @@ import {
   applyMiddleware,
   compose
 } from 'redux'
+import {
+  routerMiddleware
+} from 'connected-react-router'
 
 jest.mock('redux', () => ({
   createStore: jest.fn(),
@@ -15,12 +18,18 @@ jest.mock('redux', () => ({
   compose: jest.fn()
 }))
 
+jest.mock('connected-react-router', () => ({
+  connectRouter: () => jest.fn(),
+  routerMiddleware: jest.fn()
+}))
+
 describe('src/state/store', () => {
   beforeEach(() => {
     createStore.mockReset()
     combineReducers.mockReset()
     applyMiddleware.mockReset()
     compose.mockReset()
+    routerMiddleware.mockReset()
   })
 
   it('accepts initial state and history', () => {
@@ -28,7 +37,6 @@ describe('src/state/store', () => {
     const history = jest.fn()
     store(initialState, history)
     expect(createStore).toHaveBeenCalled()
-    expect(createStore).toHaveBeenCalledWith(undefined, initialState, undefined)
     expect(compose).toHaveBeenCalled()
     expect(applyMiddleware).toHaveBeenCalled()
   })
