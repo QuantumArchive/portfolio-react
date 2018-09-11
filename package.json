@@ -38,6 +38,7 @@
     "react-router": "^4.3.1",
     "react-virtualized": "^9.20.1",
     "redux": "^4.0.0",
+    "redux-actions": "^2.6.1",
     "redux-thunk": "^2.3.0",
     "regenerator-runtime": "^0.12.1"
   },
@@ -78,6 +79,7 @@
     "koa-webpack": "^5.1.0",
     "mocha": "^3.5.3",
     "nodemon": "^1.18.4",
+    "react-test-renderer": "^16.5.0",
     "standard": "^10.0.3",
     "style-loader": "^0.23.0",
     "supertest": "^3.0.0",

@@ -32,12 +32,33 @@ describe('src/state/store', () => {
     routerMiddleware.mockReset()
   })
 
+  const getMocks = () => ({
+    initialState: {},
+    history: jest.fn()
+  })
+
   it('accepts initial state and history', () => {
-    const initialState = {}
-    const history = jest.fn()
+    const { initialState, history } = getMocks()
     store(initialState, history)
     expect(createStore).toHaveBeenCalled()
     expect(compose).toHaveBeenCalled()
     expect(applyMiddleware).toHaveBeenCalled()
+  })
+
+  it('calls global.devToolsExtension if it exists in the global namespace', () => {
+    const devToolsExtension = jest.fn()
+    global.devToolsExtension = devToolsExtension
+    const { initialState, history } = getMocks()
+    store(initialState, history)
+    expect(devToolsExtension).toHaveBeenCalled()
+    delete global.devToolsExtension
+  })
+
+  it('returns a callback function as the second argument of compose if devToolsExtension does not exist', () => {
+    const { initialState, history } = getMocks()
+    store(initialState, history)
+    expect(compose).toHaveBeenCalled()
+    const callback = compose.mock.calls[0][1]
+    callback()
   })
 })

@@ -14,6 +14,6 @@ export default (initialState, history) =>
       ),
       global.devToolsExtension
         ? global.devToolsExtension()
-        : f => f
+        : cb => cb
     )
   )
