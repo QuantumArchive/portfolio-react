@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import articleState from './articleState'
 
-export default combineReducers({
+export default () => combineReducers({
   articleState
 })

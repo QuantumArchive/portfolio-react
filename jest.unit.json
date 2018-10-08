@@ -5,6 +5,9 @@
     "server/**/*.js"
   ],
   "coverageDirectory": "./reports/unit",
+  "coveragePathIgnorePatterns": [
+    "^<rootDir>/src/(index|constants|styles).js$"
+  ],
   "coverageReporters": [
     "json-summary",
     "lcov",
