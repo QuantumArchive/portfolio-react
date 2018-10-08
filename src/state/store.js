@@ -5,7 +5,7 @@ import { connectRouter, routerMiddleware } from 'connected-react-router'
 
 export default (initialState, history) =>
   createStore(
-    connectRouter(history)(reducers),
+    connectRouter(history)(reducers()),
     initialState,
     compose(
       applyMiddleware(
