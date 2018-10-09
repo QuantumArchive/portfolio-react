@@ -1,7 +1,10 @@
 {
   "appName": "chris-react-portfolio",
   "firebase": {
-    "databaseURL": "https://<DATABASE_NAME>.firebaseio.com",
+    "databaseURL": "ws://localhost:5000",
+    "apiKey": "API_KEY",
+    "authDomain": "projectId.firebaseapp.com",
+    "storageBucket": "storageBucket.firebaseapp.com",
     "credentials": {
       "projectId": "<PROJECT_ID>",
       "clientEmail": "kungfuremix@<PROJECT_ID>.iam.geserviceaccount.com"
