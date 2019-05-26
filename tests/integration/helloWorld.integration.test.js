@@ -1,6 +1,6 @@
 const expect = require('expect')
 const supertest = require('supertest')
-const { server, app } = require('../../server/index')
+const { server, app } = require('../../server/server')
 
 describe('/server/resolvers/helloWorld', () => {
   const request = supertest(server)
