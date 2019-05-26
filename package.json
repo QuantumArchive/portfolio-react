@@ -2,12 +2,12 @@
   "name": "react-portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "/server/server.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon --watch ./server --exec npx babel-node ./server/devServer.js",
     "integration": "NODE_ENV=test jest --config ./jest.integration.json --runInBand --forceExit --detectOpenHandles",
     "lint": "eslint .",
-    "startServer": "node ./server/index.js",
+    "startServer": "node ./server/server.js",
     "startClient": "NODE_ENV=development webpack-dev-server --host=0.0.0.0 --port=8000",
     "snap": "jest -u",
     "test": "NODE_ENV=test jest --config ./jest.unit.json --runInBand"
