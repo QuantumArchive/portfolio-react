@@ -11,8 +11,6 @@ export const defaultState = {
 }
 
 export const dataState = (state = defaultState, { type, payload }) => {
-  console.log(type)
-  console.log(payload)
   switch (type) {
     case GET_DATA:
       return {

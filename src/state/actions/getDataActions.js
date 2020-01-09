@@ -11,8 +11,8 @@ export const dataError = createAction(DATA_ERROR)
 
 export const fetchData = () => {
   return dispatch => {
-    dispatch(getData([]))
-    fetch('http://localhost:8084/api/1/', {
+    dispatch(getData())
+    fetch('http://localhost:8084/api/1/progressivequery', {
       method: 'post',
       body: {
         metadata: { source: 'festivalofcode' },
